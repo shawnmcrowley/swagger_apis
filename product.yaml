@@ -1,0 +1,49 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: H Plus Sports API
+  description: API for Products
+  contact: 
+      name: "Shawn M. Crowley"
+      email: "scrowley@buffalo.edu"
+tags:
+  - name : Products API
+    description: Products for H Sports
+paths:
+  /product:
+    get:
+      parameters:
+        - in: query
+          name: pageNumber
+          description: Page Number to Return
+          required: false
+          schema:
+            type: integer
+            example: 1
+        - in: query
+          name: pageSize
+          description: Number of Results
+          required: false
+          schema:
+              type: integer
+              example: 10
+              maximum: 100
+      responses:
+        200:
+          description: This is a List of Products in the Catalog
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  properties:
+                    id:
+                      type: integer
+                      example: 400
+                    name:
+                      type: string
+                      example: Lemon Water
+                    
+                    
+              
+        

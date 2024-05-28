@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: H Plus Sports
+  description: First Swagger Document to Learn Restful API Documentation
+  contact: 
+      name: "Shawn M. Crowley"
+      email: "scrowley@buffalo.edu"
+tags:
+  - name : Article
+    description: Articles for Sports Blog
+paths:
+  /article:
+    get:
+      tags:
+        - Article
+      responses:
+        200:
+          description: Page of Articles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    createdDate:
+                      type: string
+                      format: date
+                    tagline:
+                      type: string
+                    content:
+                      type: string
+                    category:
+                      type: string
+                    tags: 
+                      type: array
+                      items:
+                        type: string
+                    
+                    
+                    
+              
+        
